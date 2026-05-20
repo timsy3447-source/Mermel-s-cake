@@ -1,0 +1,247 @@
+/* --- ANIMATIONS FOR ORDER EXPERIENCE --- */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceBtn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@keyframes glow {
+  0% { box-shadow: 0 0 0 0 #fc575e44; }
+  100% { box-shadow: 0 0 16px 8px #f7b42c55; }
+}
+.order-steps-flex {
+  animation: fadeInUp 1.1s cubic-bezier(.77,0,.18,1);
+}
+.order-step {
+  animation: fadeInUp 0.9s cubic-bezier(.77,0,.18,1);
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+.order-step:nth-child(2) { animation-delay: 0.4s; }
+.order-step:nth-child(3) { animation-delay: 0.6s; }
+.order-btn, .pay-btn {
+  animation: bounceBtn 2.2s infinite cubic-bezier(.77,0,.18,1);
+}
+.order-btn:focus, .pay-btn:focus {
+  animation: glow 1.2s infinite alternate;
+}
+.order-progress {
+  animation: glow 2.5s infinite alternate;
+}
+.step-circle {
+  animation: bounceBtn 1.5s infinite cubic-bezier(.77,0,.18,1);
+}
+.step-icon {
+  transition: transform 0.18s;
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+}
+/* --- ORDER STEPS FLEX SECTION --- */
+.order-steps-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin: 40px auto 0 auto;
+  padding: 32px 0;
+  background: linear-gradient(90deg, #f7b42c 0%, #fc575e 100%);
+  border-radius: 24px;
+  box-shadow: 0 10px 32px rgba(252,87,94,0.18);
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+}
+.order-step {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(252,87,94,0.13);
+  padding: 28px 22px 22px 22px;
+  min-width: 290px;
+  max-width: 340px;
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 0 0 0;
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+}
+.order-step:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 32px rgba(252,87,94,0.22);
+}
+.order-step h2 {
+  color: #fc575e;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.order-step label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #f7b42c;
+}
+.order-step input,
+.order-step select,
+.order-step textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #fc575e33;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  font-size: 1rem;
+  background: #fff8f3;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.order-step input:focus,
+.order-step select:focus,
+.order-step textarea:focus {
+  border: 2px solid #fc575e;
+  outline: none;
+  box-shadow: 0 0 0 2px #f7b42c44;
+}
+.order-btn, .pay-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #fc575e 0%, #f7b42c 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(252,87,94,0.13);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.order-btn:hover, .pay-btn:hover {
+  background: linear-gradient(90deg, #f7b42c 0%, #fc575e 100%);
+  color: #fff;
+  transform: scale(1.04);
+  box-shadow: 0 6px 18px rgba(252,87,94,0.18);
+}
+.pickup-step {
+  border-top: 5px solid #f7b42c;
+}
+.order-form-step {
+  border-top: 5px solid #fc575e;
+}
+.payment-step {
+  border-top: 5px solid #43ea7b;
+}
+.step-desc {
+  display: block;
+  font-size: 0.92em;
+  color: #fc575e;
+  margin-left: 18px;
+}
+.payment-info {
+  background: #fff8f3;
+  border-left: 4px solid #43ea7b;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  color: #43ea7b;
+  font-size: 0.98em;
+}
+.order-step ol {
+  margin: 8px 0 0 18px;
+  color: #fc575e;
+}
+.order-step textarea {
+  min-height: 38px;
+  resize: vertical;
+}
+.order-step input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+}
+/* About Us section full-width and interactive */
+#contact.interactive-about {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  left: 0;
+  right: 0;
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, #43ea7b 0%, #1eae4a 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 32px rgba(34,139,34,0.18);
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  overflow: hidden;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+#contact.interactive-about .about-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+#contact.interactive-about.open .about-details {
+  max-height: 400px;
+  transition: max-height 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+#contact.interactive-about:hover {
+  background: linear-gradient(90deg, #1eae4a 0%, #43ea7b 100%) !important;
+  box-shadow: 0 12px 40px rgba(34,139,34,0.28);
+}
+#contact.interactive-about .about-toggle {
+  background: #fff;
+  color: #1eae4a;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 18px 0 0 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(34,139,34,0.12);
+}
+#contact.interactive-about .about-toggle:hover {
+  background: #1eae4a;
+  color: #fff;
+}
+/* Main CSS for Mermels Bakery */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+#more-cakes {
+  /* Default style, will be expanded for width */
+  width: 100%;
+  max-width: 900px;
+  margin: 0;
+  transition: width 0.3s;
+  height: 90%;
+}
+
+/* Make the message/video div match the cakes section height */
+.main-flex-row {
+  display: flex;
+  align-items: stretch;
+}
+.main-flex-row > section,
+.main-flex-row > .welcome-video {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+}
+.welcome-video {
+  padding: 80px;
+  background: rgba(104, 59, 59, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  justify-content: flex-start;
+  height: auto;
+  margin-left: 20px;
+  padding-bottom: 100px;
+}
+
+/* You can further customize the width as needed */

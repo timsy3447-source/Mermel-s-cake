@@ -1,0 +1,372 @@
+<!-- Main HTML document for Mermels Bakery website -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>Mermels Bakery</title>
+    <link rel="icon" type="image/png" href="merm.png">
+  <!-- Embedded CSS for alert styles -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .alert {
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .alert-success {
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+    }
+    .alert-info {
+      background-color: #d1ecf1;
+      border: 1px solid #bee5eb;
+      color: #0c5460;
+    }
+  </style>
+</head>
+<!-- Page background image and main body -->
+<body style="background-image: url('background.png'); background-size: cover; background-attachment: fixed; background-position: center;">
+  <!-- Navigation bar -->
+  <nav style="position: absolute; top: 12px; left: 10px; width: auto; background: rgba(255, 255, 255, 0.274); padding: 12px 14px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.15);">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <!-- Logo -->
+      <img src="IMG_20260417_170531.jpg" alt="Mermel's Bakery Logo" style="width: 60px; height: 50px; border-radius: 50%;">
+      <!-- Hamburger menu button -->
+      <button id="menu-toggle" onclick="toggleMenu()" style="display: flex; flex-direction: column; justify-content: space-between; width: 28px; height: 22px; background: transparent; border: none; padding: 0; cursor: pointer;">
+        <span style="display: block; height: 3px; background: #333; border-radius: 2px;"></span>
+        <span style="display: block; height: 3px; background: #333; border-radius: 2px;"></span>
+        <span style="display: block; height: 3px; background: #333; border-radius: 2px;"></span>
+      </button>
+    </div>
+    <!-- Navigation links (hidden by default) -->
+    <div id="menu-links" style="display: none; margin-top: 12px; flex-direction: column; gap: 10px;">
+      <a href="#home" style="color: #c51c1cbd; text-decoration: none; font-weight: bold; display: block;">Home</a>
+      <a href="#cakes" style="color: #8e3e3e; text-decoration: none; display: block;">Cakes</a>
+      <a href="gallery.html" style="color: #8e3e3e; text-decoration: none; display: block;">Gallery</a>
+      <a href="#contact" style="color: #992e2e; text-decoration: none; display: block;">Contact</a>
+    </div>
+  </nav>
+  <!-- Hero section with search bar -->
+  <section style="background-image: url('head.png'); background-size: cover; background-position: center; border: 6px solid #ffffff; border-radius: 12px; padding: 40px 24px 24px; max-width: 600px; margin: 24px auto; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); text-align: center; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35);"></div>
+    <div style="position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%;">
+      <h1 style="margin-bottom: 18px; font-size: 2.5rem;">
+      <div>
+          <!-- Search bar for cakes -->
+          <input type="text" placeholder="Search for cakes..." id="search-bar" list="bakery-options" style="padding: 10px 14px; border-radius: 6px; border: none; width: 200px; max-width: 100%; margin-right: 20px;">
+          <button onclick="search()" style="padding: 11px 16px; border:none; border-radius: 10px; background: rgb(255, 255, 255); color: #c51c1cbd; font-weight: bold; cursor: pointer;">Search</button>
+      </div>
+    </div>
+  </section>
+  <!-- Main content: cakes and welcome message -->
+  <div class="main-flex-row" style="max-width: 120000px; margin:0; gap: 20px; align-items: flex-start;">
+    <!-- Cakes section -->
+    <section id="cakes" style="flex: 1; padding: 24px; background: rgba(255,255,255,0.65); border-radius: 20px; border: 2px solid rgba(255,255,255,0.8); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18); backdrop-filter: blur(12px);">
+      <h2 style="color: #4b1b5a;">Our Delicious Cakes</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+        <div style="text-align: center;">
+          <img src="choclate cake.jpg" alt="Chocolate Cake" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Chocolate Cake</p>
+        </div>
+        <div style="text-align: center;">
+          <img src="birthday cake.jpg" alt="Birthday Cake" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Birthday Cake</p>
+        </div>
+        <div style="text-align: center;">
+          <img src="wedding cake.jpg" alt="Wedding Cake" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Wedding Cake</p>
+        </div>
+        <div style="text-align: center;">
+          <img src="Vanilla-Cupcakes.webp" alt="Cupcakes" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Cupcakes</p>
+        </div>
+        <!-- New Cake 1 -->
+        <div style="text-align: center;">
+          <img src="vanilla cake.webp" alt="Vanilla Cake" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Vanilla Cake</p>
+        </div>
+        <!-- New Cake 2 -->
+        <div style="text-align: center;">
+          <img src="Strawberry ice cream cake.webp" alt="Strawberry Cream Cake" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Strawberry Cream Cake</p>
+        </div>
+      </div>
+      <!-- More cakes (hidden by default) -->
+      <div id="more-cakes" style="display:none; margin-top: 18px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+        <div style="text-align: center;">
+          <img src="red velvet.jpg" alt="Red Velvet Cake" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Red Velvet Cake</p>
+        </div>
+        <div style="text-align: center;">
+          <img src="cheesecake.webp" alt="Cheesecake" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Cheesecake</p>
+        </div>
+        <div style="text-align: center;">
+          <img src="fruit cake.webp" alt="Fruit Cake" style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+          <p style="margin-top: 8px; font-weight: bold;">Fruit Cake</p>
+        </div>
+      </div>
+      <!-- Button to view more cakes -->
+      <div style="text-align: center; margin-top: 18px;">
+        <button id="more-button" onclick="window.location.href='gallery.html'" style="padding: 10px 18px; border:none; border-radius: 10px; background: #c51c1cbd; color: white; cursor: pointer;">More...</button>
+      </div>
+    </section>
+    <!-- Welcome message and video -->
+    <div class="welcome-video">
+      <h1><strong>Welcome to Mermel's Bakery,</h1></strong><br> we offer good services and of quality.<br> We promise you a delectable, finger-licking cakes. Welcome!</h1>
+      <video autoplay loop controls style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); margin-top: 20px;">
+        <source src="Kootek 12 Inch Aluminium Alloy Revolving Cake Stand Set.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <!-- Pickup location selection -->
+  <!-- Combined Order Steps Section -->
+  <section class="order-steps-flex">
+        <!-- Progress Bar -->
+        <div class="order-progress-bar">
+          <div class="order-progress" id="order-progress"></div>
+          <div class="order-progress-labels">
+            <span>Pick Up</span><span>Order</span><span>Payment</span>
+          </div>
+        </div>
+    <!-- Pickup location -->
+    <div class="order-step pickup-step">
+      <div class="step-header"><span class="step-circle">1</span><span class="step-icon" title="Choose pickup location">📍</span></div>
+      <h2>Pick Up Location</h2>
+      <form id="pickup-form">
+        <label class="has-tooltip"><input type="radio" name="pickupLocation" value="Main Branch - Downtown" required> Main Branch - Downtown<br><span class="step-desc">123 Bakery Street, City Center</span><span class="tooltip">Our main city branch</span></label>
+        <label class="has-tooltip"><input type="radio" name="pickupLocation" value="North Branch - Mall"> North Branch - Mall<br><span class="step-desc">456 Shopping Plaza, North District</span><span class="tooltip">Located in the mall</span></label>
+        <label class="has-tooltip"><input type="radio" name="pickupLocation" value="South Branch - Park"> South Branch - Park<br><span class="step-desc">789 Park Avenue, South Side</span><span class="tooltip">Near the park</span></label>
+        <label class="has-tooltip"><input type="radio" name="pickupLocation" value="East Branch - Market"> East Branch - Market<br><span class="step-desc">101 Market Square, East End</span><span class="tooltip">Market area</span></label>
+        <label class="has-tooltip"><input type="radio" name="pickupLocation" value="West Branch - Residential"> West Branch - Residential<br><span class="step-desc">202 Home Lane, West Area</span><span class="tooltip">Residential zone</span></label>
+      </form>
+    </div>
+    <!-- Order form -->
+    <div class="order-step order-form-step">
+      <div class="step-header"><span class="step-circle">2</span><span class="step-icon" title="Fill order details">📝</span></div>
+      <h2>Place Order</h2>
+      <form onsubmit="placeOrder(event)">
+        <label class="has-tooltip">Name:<input type="text" name="name" required><span class="tooltip">Enter your full name</span></label>
+        <label class="has-tooltip">Email:<input type="email" name="email" required><span class="tooltip">We'll send confirmation here</span></label>
+        <label class="has-tooltip">Phone:<input type="tel" name="phone" required><span class="tooltip">For order updates</span></label>
+        <label class="has-tooltip">Cake Type:
+          <select name="cakeType" required>
+            <option value="Sweet Cakes">Sweet Cakes</option>
+            <option value="Birthday Cakes">Birthday Cakes</option>
+            <option value="Wedding Cakes">Wedding Cakes</option>
+            <option value="Party Cakes">Party Cakes</option>
+            <option value="Cupcakes">Cupcakes</option>
+          </select>
+          <span class="tooltip">Choose your cake</span>
+        </label>
+        <label class="has-tooltip">Quantity:<input type="number" name="quantity" min="1" value="1" required><span class="tooltip">How many cakes?</span></label>
+        <label class="has-tooltip">Notes:<textarea name="notes" rows="2" placeholder="Special instructions..."></textarea><span class="tooltip">Allergies, preferences, etc.</span></label>
+        <button type="submit" class="order-btn">Submit Order</button>
+      </form>
+    </div>
+    <!-- Payment section -->
+    <div class="order-step payment-step">
+      <div class="step-header"><span class="step-circle">3</span><span class="step-icon" title="Pay with M-Pesa">💳</span></div>
+      <h2>Payment</h2>
+      <div class="payment-info">
+        <strong>M-Pesa Payment Instructions:</strong>
+        <ol>
+          <li>Enter your M-Pesa registered phone number</li>
+          <li>Enter the payment amount</li>
+          <li>Click "Pay Now" to receive an STK push on your phone</li>
+          <li>Enter your M-Pesa PIN to complete the transaction</li>
+        </ol>
+      </div>
+      <form id="mpesa-form" onsubmit="processMpesaPayment(event)">
+        <label class="has-tooltip">M-Pesa Phone:<input type="tel" id="mpesa-phone" placeholder="e.g., 0712345678" required pattern="^(?:254|\+254|0)?[17]\d{8}$"><span class="tooltip">Kenyan mobile number</span></label>
+        <label class="has-tooltip">Amount (KES):<input type="number" id="payment-amount" placeholder="Enter amount" min="1" required><span class="tooltip">Total to pay</span></label>
+        <label class="has-tooltip">Description:<input type="text" id="payment-description" placeholder="e.g., Cake Order Payment" value="Cake Order Payment" required><span class="tooltip">Payment purpose</span></label>
+        <button type="submit" class="pay-btn">Pay Now with M-Pesa</button>
+      </form>
+      <div id="payment-status" style="margin-top: 10px; display: none;">
+        <div id="payment-message"></div>
+      </div>
+    </div>
+    <!-- Confetti Canvas for Success -->
+    <canvas id="confetti-canvas" style="position: fixed; pointer-events: none; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 9999; display: none;"></canvas>
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" title="Toggle dark mode" style="position: absolute; top: 18px; right: 24px; z-index: 20; background: #fff; color: #fc575e; border: none; border-radius: 50%; width: 44px; height: 44px; box-shadow: 0 2px 8px #fc575e33; font-size: 1.5rem; cursor: pointer; transition: background 0.2s, color 0.2s;">🌙</button>
+  </section>
+  <!-- Contact/About section -->
+  <section id="contact" class="interactive-about" style="margin: 24px 0 0 0; padding: 32px 0;">
+    <h2 style="text-align:center; font-size:2.3rem; letter-spacing:1px;">About Us</h2>
+    <div style="text-align:center;">
+      <button class="about-toggle" onclick="toggleAboutDetails(event)">Show More</button>
+    </div>
+    <div class="about-details" style="text-align:center;">
+      <p style="margin-top: 24px; font-size:1.2rem;">Welcome to Mermel's Bakery! We bake fresh, delicious cakes every day using the finest ingredients and love. Whether you want a birthday cake, wedding cake, or cupcakes, we make each order special.</p>
+      <p>Email: <a href="mailto:timsy3447@gmail.com" style="color:#fff; text-decoration:underline;">timsy3447@gmail.com</a></p>
+      <p>Call: <a href="tel:0789836947" style="color:#fff; text-decoration:underline;">0789836947</a> for more info.</p>
+    </div>
+  </section>
+  <!-- JavaScript for interactivity -->
+  <script>
+            // Interactive About Us section toggle
+            function toggleAboutDetails(e) {
+              const section = document.getElementById('contact');
+              section.classList.toggle('open');
+              const btn = section.querySelector('.about-toggle');
+              if (section.classList.contains('open')) {
+                btn.textContent = 'Show Less';
+              } else {
+                btn.textContent = 'Show More';
+              }
+            }
+      // Search for cakes by name and scroll to image
+      function search() {
+          const query = document.getElementById('search-bar').value.toLowerCase();
+          const images = document.querySelectorAll('#cakes img');
+          for (let img of images) {
+              if (img.alt.toLowerCase().includes(query)) {
+                  img.scrollIntoView({ behavior: 'smooth' });
+                  return;
+              }
+          }
+          alert('No matching cake found.');
+      }
+
+      // --- JSS INTERACTIVITY: Highlight cake images on hover ---
+      // This code adds a highlight effect to cake images when hovered, making the UI more interactive.
+      document.addEventListener('DOMContentLoaded', function() {
+        // Highlight effect for cakes
+        const cakeImages = document.querySelectorAll('#cakes img');
+        cakeImages.forEach(function(img) {
+          img.addEventListener('mouseover', function() {
+            img.style.transform = 'scale(1.08)';
+            img.style.boxShadow = '0 0 24px 6px #c51c1c80';
+            img.style.transition = 'transform 0.2s, box-shadow 0.2s';
+          });
+          img.addEventListener('mouseout', function() {
+            img.style.transform = '';
+            img.style.boxShadow = '0 6px 18px rgba(0,0,0,0.2)';
+          });
+        });
+
+        // --- Auto-fill Cake Type from Gallery ---
+        // If redirected from gallery.html with a selected cake, auto-select it in the order form
+        const cakeTypeSelect = document.querySelector('section#order select[name="cakeType"]');
+        if (cakeTypeSelect && localStorage.getItem('selectedCakeType')) {
+          const selectedCake = localStorage.getItem('selectedCakeType');
+          // Try to select the option if it exists, otherwise add it
+          let found = false;
+          for (let i = 0; i < cakeTypeSelect.options.length; i++) {
+            if (cakeTypeSelect.options[i].text.toLowerCase() === selectedCake.toLowerCase()) {
+              cakeTypeSelect.selectedIndex = i;
+              found = true;
+              break;
+            }
+          }
+          if (!found) {
+            // Add the cake as a new option and select it
+            const opt = document.createElement('option');
+            opt.value = selectedCake;
+            opt.text = selectedCake;
+            cakeTypeSelect.add(opt);
+            cakeTypeSelect.value = selectedCake;
+          }
+          // Clear the stored value so it doesn't persist
+          localStorage.removeItem('selectedCakeType');
+        }
+      });
+        // Toggle navigation menu visibility
+        function toggleMenu() {
+          const menu = document.getElementById('menu-links');
+          menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+      // Handle order form submission
+      function placeOrder(event) {
+          event.preventDefault();
+          const form = event.target;
+          const pickupForm = document.getElementById('pickup-form');
+          const pickupLocation = pickupForm.querySelector('input[name="pickupLocation"]:checked');
+          
+          if (!pickupLocation) {
+              alert('Please select a pickup location before placing your order.');
+              return;
+          }
+          
+          const orderDetails = {
+              name: form.name.value,
+              email: form.email.value,
+              phone: form.phone.value,
+              cakeType: form.cakeType.value,
+              quantity: form.quantity.value,
+              notes: form.notes.value,
+              pickupLocation: pickupLocation.value,
+          };
+          const subject = encodeURIComponent('New cake order from ' + orderDetails.name);
+          const body = encodeURIComponent(
+              'Name: ' + orderDetails.name + '\n' +
+              'Email: ' + orderDetails.email + '\n' +
+              'Phone: ' + orderDetails.phone + '\n' +
+              'Cake Type: ' + orderDetails.cakeType + '\n' +
+              'Quantity: ' + orderDetails.quantity + '\n' +
+              'Pickup Location: ' + orderDetails.pickupLocation + '\n' +
+              'Notes: ' + orderDetails.notes + '\n'
+          );
+          window.location.href = 'mailto:timsy3447@gmail.com?subject=' + subject + '&body=' + body;
+          alert('Order received! An email draft has been opened so you can send the order to timsy3447@gmail.com.');
+          form.reset();
+          pickupForm.reset();
+      }
+
+      // Simulate M-Pesa payment process and send confirmation
+      function processMpesaPayment(event) {
+          event.preventDefault();
+          
+          const phone = document.getElementById('mpesa-phone').value;
+          const amount = document.getElementById('payment-amount').value;
+          const description = document.getElementById('payment-description').value;
+          
+          // Simulate M-Pesa payment processing
+          const statusDiv = document.getElementById('payment-status');
+          const messageDiv = document.getElementById('payment-message');
+          
+          // Show processing message
+          statusDiv.style.display = 'block';
+          messageDiv.className = 'alert alert-info';
+          messageDiv.innerHTML = '<strong>Processing Payment...</strong><br>Sending STK push to ' + phone + ' for KES ' + amount;
+          
+          // Simulate payment completion after 3 seconds
+          setTimeout(() => {
+              const transactionId = 'MP' + Date.now();
+              messageDiv.className = 'alert alert-success';
+              messageDiv.innerHTML = '<strong>Payment Successful! ✅</strong><br>' +
+                  'Transaction ID: ' + transactionId + '<br>' +
+                  'Amount: KES ' + amount + '<br>' +
+                  'Phone: ' + phone + '<br>' +
+                  'Description: ' + description + '<br><br>' +
+                  'Thank you for your payment! You will receive an M-Pesa confirmation SMS shortly.';
+              
+              // Reset form
+              document.getElementById('mpesa-form').reset();
+              
+              // Send confirmation email
+              const paymentSubject = encodeURIComponent('M-Pesa Payment Confirmation - ' + transactionId);
+              const paymentBody = encodeURIComponent(
+                  'Payment Details:\n' +
+                  'Transaction ID: ' + transactionId + '\n' +
+                  'Phone: ' + phone + '\n' +
+                  'Amount: KES ' + amount + '\n' +
+                  'Description: ' + description + '\n' +
+                  'Date: ' + new Date().toLocaleString() + '\n'
+              );
+              window.location.href = 'mailto:timsy3447@gmail.com?subject=' + paymentSubject + '&body=' + paymentBody;
+          }, 3000);
+      }
+  </script>
+  <!-- Button to scroll to cakes section -->
+  <div  style="text-align: center; margin: 40px 0;">
+      <button onclick="document.getElementById('cakes').scrollIntoView({behavior: 'smooth'});" style="padding: 10px 20px; background: rgb(196, 48, 173); color: white; border: none; border-radius: 8px; cursor: pointer;">View Different Types of Cakes</button>
+  </div>
+</body>
+</html>
