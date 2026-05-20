@@ -17,10 +17,10 @@
       </button>
     </div>
     <div id="menu-links" style="display: none; margin-top: 12px; flex-direction: column; gap: 10px;">
-      <a href="index2.html#home" style="color: #c51c1cbd; text-decoration: none; font-weight: bold; display: block;">Home</a>
-      <a href="index2.html#cakes" style="color: #8e3e3e; text-decoration: none; display: block;">Cakes</a>
+      <a href="index.html#home" style="color: #c51c1cbd; text-decoration: none; font-weight: bold; display: block;">Home</a>
+      <a href="index.html#cakes" style="color: #8e3e3e; text-decoration: none; display: block;">Cakes</a>
       <a href="gallery.html" style="color: #8e3e3e; text-decoration: none; display: block;">Gallery</a>
-      <a href="index2.html#contact" style="color: #992e2e; text-decoration: none; display: block;">Contact</a>
+      <a href="index.html#contact" style="color: #992e2e; text-decoration: none; display: block;">Contact</a>
     </div>
   </nav>
 
@@ -150,7 +150,7 @@
     </section>
 
     <div style="text-align: center; margin: 40px 0;">
-      <a href="index2.html" style="display: inline-block; padding: 15px 30px; background: rgb(196, 48, 173); color: white; text-decoration: none; border-radius: 10px; font-weight: bold; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+      <a href="index.html" style="display: inline-block; padding: 15px 30px; background: rgb(196, 48, 173); color: white; text-decoration: none; border-radius: 10px; font-weight: bold; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
         Back to Main Site
       </a>
     </div>
@@ -170,8 +170,8 @@
           btn.addEventListener('click', function() {
             // Store the selected cake name in localStorage
             localStorage.setItem('selectedCakeType', btn.getAttribute('data-cake'));
-            // Redirect to the order form section on index2.html
-            window.location.href = 'index2.html#order';
+            // Redirect to the order form section on index.html
+            window.location.href = 'index.html#order';
           });
         });
       });
