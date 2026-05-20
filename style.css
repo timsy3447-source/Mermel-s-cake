@@ -647,3 +647,46 @@ body {
         display: none;
     }
 }
+/* --- MOBILE RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+    
+    /* 1. Main Layout: Stack the left column and right column vertically */
+    .main-content-wrapper {
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    /* 2. Force both side blocks to take full width instead of half screen */
+    .left-gallery, .right-info-panel {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    /* 3. Adjust your Cake Grid so items don't shrink too small */
+    /* If you are using grid layout for your cards, change it to 1 or 2 columns max */
+    .cake-gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    /* 4. Scale down large headers so they don't break lines awkwardly */
+    h1 {
+        font-size: 2rem !important;
+    }
+    h2 {
+        font-size: 1.6rem !important;
+    }
+
+    /* 5. Re-arrange your Form cards at the bottom to stack instead of sitting 3-across */
+    .checkout-grid-container {
+        grid-template-columns: 1fr !important; /* Forces 1 form per row */
+        gap: 15px;
+        padding: 10px;
+    }
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
