@@ -1,3 +1,124 @@
+/* --- INSTAGRAM BANNER --- */
+.insta-banner {
+  margin: 22px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+.insta-banner-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 24px;
+  box-shadow: 0 2px 12px #fc575e22;
+  padding: 10px 22px;
+  font-size: 1.08rem;
+  color: #c51c1cbd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+.insta-banner-link:hover {
+  background: linear-gradient(90deg, #ffe0f7 0%, #fc575e 100%);
+  color: #fff;
+  box-shadow: 0 4px 18px #fc575e44;
+}
+.insta-logo {
+  font-size: 1.5em;
+  color: #a259c5;
+  margin-right: 2px;
+}
+.insta-arrow {
+  font-size: 1.2em;
+  color: #fc575e;
+  margin-left: 6px;
+}
+@media (max-width: 600px) {
+  .insta-banner-link {
+    font-size: 0.98rem;
+    padding: 8px 8px;
+    border-radius: 16px;
+  }
+  .insta-logo, .insta-arrow {
+    font-size: 1.1em;
+  }
+}
+/* --- BIG INSTAGRAM BUTTON --- */
+.big-insta-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 0 0;
+  z-index: 10;
+}
+.big-insta-btn {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(90deg, #fc575e 0%, #a259c5 100%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 18px 38px;
+  border-radius: 40px;
+  box-shadow: 0 6px 32px #fc575e44;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+  border: none;
+  outline: none;
+}
+.big-insta-btn:hover {
+  background: linear-gradient(90deg, #a259c5 0%, #fc575e 100%);
+  color: #fff;
+  box-shadow: 0 12px 40px #a259c555;
+  transform: scale(1.04) rotate(-1deg);
+}
+.big-insta-logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.2em;
+  margin-right: 2px;
+}
+.big-insta-text {
+  font-size: 1.2em;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 600px) {
+  .big-insta-btn {
+    font-size: 1.1rem;
+    padding: 12px 10px;
+    border-radius: 22px;
+    gap: 10px;
+  }
+  .big-insta-logo {
+    font-size: 1.3em;
+  }
+  .big-insta-text {
+    font-size: 1em;
+  }
+  .big-insta-btn-wrapper {
+    margin: 18px 0 0 0;
+  }
+}
+/* --- LEFT GALLERY SECTION --- */
+.left-gallery {
+  flex: 1.2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 320px;
+  background: linear-gradient(90deg, #f7b42c 0%, #ff9800 50%, #fc575e 100%);
+  border-radius: 18px;
+  padding: 24px 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: background 0.4s;
+}
+
+.left-gallery:hover {
+  background: linear-gradient(90deg, #fcf6b2 0%, #f7b42c 30%, #ff9800 70%, #fc575e 100%);
+}
 /* --- ANIMATIONS FOR ORDER EXPERIENCE --- */
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(40px); }
@@ -51,6 +172,11 @@
   max-width: 1200px;
   position: relative;
   z-index: 2;
+  transition: background 0.4s;
+}
+
+.order-steps-flex:hover {
+  background: linear-gradient(90deg, #f7b42c 0%, #ff9800 50%, #fc575e 100%);
 }
 .order-step {
   background: #fff;
@@ -166,9 +292,9 @@
   left: 0;
   right: 0;
   border-radius: 0 !important;
-  background: linear-gradient(90deg, #43ea7b 0%, #1eae4a 100%) !important;
+  background: linear-gradient(90deg, #f7b42c 0%, #fc575e 100%) !important;
   color: #fff !important;
-  box-shadow: 0 8px 32px rgba(34,139,34,0.18);
+  box-shadow: 0 8px 32px rgba(252,87,94,0.18);
   position: relative;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -186,12 +312,12 @@
   transition: max-height 1.2s cubic-bezier(0.4,0,0.2,1);
 }
 #contact.interactive-about:hover {
-  background: linear-gradient(90deg, #1eae4a 0%, #43ea7b 100%) !important;
+  background: linear-gradient(90deg, #94ae1e 0%, #ea43be 100%) !important;
   box-shadow: 0 12px 40px rgba(34,139,34,0.28);
 }
 #contact.interactive-about .about-toggle {
   background: #fff;
-  color: #1eae4a;
+  color: #8233928c;
   border: none;
   border-radius: 8px;
   padding: 10px 22px;
@@ -203,7 +329,7 @@
   box-shadow: 0 2px 8px rgba(34,139,34,0.12);
 }
 #contact.interactive-about .about-toggle:hover {
-  background: #1eae4a;
+  background: #784a5c;
   color: #fff;
 }
 /* Main CSS for Mermels Bakery */
@@ -245,3 +371,279 @@ body {
 }
 
 /* You can further customize the width as needed */
+.bakery-cta-box {
+    background: rgba(255, 255, 255, 0.85); /* Semitransparent white to match your left side panels */
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 20px; /* Pushes it down away from the video */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 100%;
+}
+
+.bakery-cta-box h3 {
+    color: #4b1b5a; /* Matching your dark purple header color */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.bakery-cta-box p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #fc575e55; /* Matching your button/hover pink shade */
+    color: #4b1b5a;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #fc575e;
+    color: white;
+}
+.interactive-cake-builder {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    border: 2px dashed #fc575e33; /* Fun decorative bakery border */
+}
+
+.interactive-cake-builder h3 {
+    color: #4b1b5a;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.builder-subtitle {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.builder-group {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.builder-group span {
+    font-weight: bold;
+    color: #4b1b5a;
+    min-width: 70px;
+}
+
+.cake-tag {
+    background: white;
+    border: 1px solid #fc575e55;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #4b1b5a;
+    transition: all 0.2s ease;
+}
+
+.cake-tag.active, .cake-tag:hover {
+    background: #fc575e;
+    color: white;
+    border-color: #fc575e;
+}
+
+.builder-box-result {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.builder-cta {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #fc575e;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.bakery-stats-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.bakery-stats-box h3 {
+    color: #4b1b5a;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fc575e;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* --- RIGHT INFO PANEL SECTION --- */
+.right-info-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 320px;
+  background: linear-gradient(90deg, #fc575e 0%, #c51c1cbd 50%, #a259c5 100%);
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  align-items: stretch;
+  justify-content: flex-start;
+  transition: background 0.4s;
+}
+
+.right-info-panel:hover {
+  background: linear-gradient(90deg, #ffe0f7 0%, #fc575e 30%, #c51c1cbd 70%, #a259c5 100%);
+}
+
+@media (max-width: 900px) {
+  .main-content-wrapper {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 6px;
+  }
+  .left-gallery,
+  .right-info-panel {
+    min-width: 0;
+    width: 100%;
+    border-radius: 14px;
+    padding: 18px 6px;
+    box-sizing: border-box;
+  }
+  .cake-card {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto 14px auto;
+  }
+  .video-container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content-wrapper {
+    padding: 0 2px;
+  }
+  .left-gallery,
+  .right-info-panel {
+    padding: 10px 2px;
+    border-radius: 10px;
+  }
+  .cake-card {
+    max-width: 98vw;
+    padding: 8px 2px 12px 2px;
+  }
+  .bakery-text-box,
+  .bakery-cta-box {
+    padding: 10px 4px;
+    border-radius: 8px;
+  }
+}
+.sweet-slider {
+    width: 100%;
+    accent-color: #fc575e; /* Matches your beautiful theme pink */
+    margin: 15px 0;
+}
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #4b1b5a;
+    font-weight: bold;
+}
+.baking-scroll-companion {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 15px 10px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(75, 27, 90, 0.1);
+    border: 1px solid rgba(252, 87, 94, 0.2);
+}
+
+.baking-stage-text {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #4b1b5a;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    white-space: nowrap;
+}
+
+.baking-icon-display {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* The vertical gauge tube */
+.progress-track-bg {
+    width: 6px;
+    height: 150px;
+    background: #fdf2f4;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* The fluid color fill inside the tube */
+.progress-fill-line {
+    width: 100%;
+    height: 0%; /* Dynamic */
+    background: linear-gradient(to bottom, #fc575e, #4b1b5a);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    transition: height 0.1s ease-out;
+}
+
+/* Responsive: Hide on tiny screens like phones to prevent crowding */
+@media (max-width: 768px) {
+    .baking-scroll-companion {
+        display: none;
+    }
+}
